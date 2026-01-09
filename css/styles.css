@@ -122,7 +122,8 @@ body {
 }
 
 .main-container {
-    max-width: 1000px;
+    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
 }
@@ -320,22 +321,25 @@ body {
 
 /* Inline Terminal */
 .inline-terminal {
-    width: 100%;
-    max-width: 700px;
-    background: rgba(0, 0, 0, 0.8);
-    border: 1px solid #333;
+    width: 75%;
+    max-width: 900px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #444;
     border-radius: 8px;
-    padding: 20px;
-    margin-top: 40px;
+    padding: 30px 40px;
+    margin: 60px auto 0;
     text-align: left;
     opacity: 0;
     animation: fadeIn 1s 2.2s forwards;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), inset 0 0 60px rgba(0, 0, 0, 0.3);
 }
 
 .terminal-header {
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 18px;
+    margin-bottom: 10px;
     color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .terminal-hint {
@@ -345,12 +349,13 @@ body {
 }
 
 .terminal-output {
-    min-height: 150px;
-    max-height: 200px;
+    min-height: 280px;
+    max-height: 350px;
     overflow-y: auto;
-    margin-bottom: 15px;
-    font-size: 13px;
-    line-height: 1.5;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    padding-right: 10px;
 }
 
 .terminal-output .command {
@@ -390,27 +395,30 @@ body {
 
 /* Live Chart Section */
 .live-chart-section {
-    width: 100%;
-    max-width: 700px;
-    margin-top: 40px;
+    width: 75%;
+    max-width: 900px;
+    margin: 60px auto 0;
     opacity: 0;
     animation: fadeIn 1s 2.5s forwards;
 }
 
 .chart-header {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 15px;
     color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .chart-container {
     width: 100%;
-    height: 400px;
-    background: rgba(0, 0, 0, 0.8);
-    border: 1px solid #333;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #444;
     border-radius: 8px;
     overflow: hidden;
     position: relative;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), inset 0 0 60px rgba(0, 0, 0, 0.3);
 }
 
 .chart-container iframe {
@@ -479,6 +487,22 @@ body {
 
     .main-btn {
         justify-content: center;
+    }
+
+    .inline-terminal,
+    .live-chart-section {
+        width: 100%;
+        padding: 20px;
+        margin-top: 40px;
+    }
+
+    .terminal-output {
+        min-height: 200px;
+        max-height: 280px;
+    }
+
+    .chart-container {
+        height: 400px;
     }
 
     body {
