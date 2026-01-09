@@ -410,6 +410,35 @@ body {
     letter-spacing: 1px;
 }
 
+/* Signal Command Styles */
+.signal-scan-line {
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.signal-whale {
+    margin-top: 15px;
+    font-family: 'Courier New', monospace;
+    white-space: pre;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.signal-whale.signal-pulse {
+    animation: whalePulse 1.5s ease-in-out;
+}
+
+@keyframes whalePulse {
+    0%, 100% { 
+        opacity: 1;
+        text-shadow: 0 0 5px rgba(255,255,255,0.3);
+    }
+    50% { 
+        opacity: 0.7;
+        text-shadow: 0 0 20px rgba(255,255,255,0.6), 0 0 30px rgba(255,255,255,0.4);
+    }
+}
+
 .chart-container {
     width: 100%;
     height: 500px;
@@ -419,6 +448,22 @@ body {
     overflow: hidden;
     position: relative;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), inset 0 0 60px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-container.chart-pulse {
+    animation: chartPulse 1.5s ease-in-out;
+}
+
+@keyframes chartPulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), inset 0 0 60px rgba(0, 0, 0, 0.3);
+    }
+    50% { 
+        transform: scale(1.015);
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), inset 0 0 60px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255,255,255,0.15);
+    }
 }
 
 .chart-container iframe {

@@ -107,6 +107,7 @@ const commands = {
 67.lore     - The forbidden knowledge
 67.fortune  - Receive your alpha
 67.progress - Project status
+67.signal   - The ritual scan
 clear       - Clear terminal`,
 
     '67.about': `$67 is the next revolution in crypto.
@@ -251,8 +252,77 @@ Status: EARLY`,
   Status: ON TRACK
   Next Milestone: Phase 3 completion
 `
+    },
+
+    '67.signal': {
+        special: 'signal'
     }
 };
+
+// Signal Command Handler
+async function executeSignalCommand(output) {
+    const scanMessages = [
+        'Scanning liquidity...',
+        'Tracking volume...',
+        'Listening to the Whale...'
+    ];
+    
+    const whaleArt = [
+        "       __..---'''''---..__",
+        "  _.-'   the whale waits     '-._",
+        " <_____.-''                 ''-.__>"
+    ];
+    
+    // Create response container
+    const responseDiv = document.createElement('div');
+    responseDiv.className = 'response signal-response';
+    output.appendChild(responseDiv);
+    
+    // Sequential scan messages with delay
+    for (const msg of scanMessages) {
+        const line = document.createElement('div');
+        line.className = 'signal-scan-line';
+        line.textContent = msg;
+        responseDiv.appendChild(line);
+        output.scrollTop = output.scrollHeight;
+        await new Promise(r => setTimeout(r, 400));
+    }
+    
+    await new Promise(r => setTimeout(r, 300));
+    
+    // Create whale container
+    const whaleContainer = document.createElement('div');
+    whaleContainer.className = 'signal-whale';
+    responseDiv.appendChild(whaleContainer);
+    
+    // Render whale ASCII line by line
+    for (const line of whaleArt) {
+        const whaleLine = document.createElement('div');
+        whaleLine.textContent = line;
+        whaleContainer.appendChild(whaleLine);
+        output.scrollTop = output.scrollHeight;
+        await new Promise(r => setTimeout(r, 200));
+    }
+    
+    // Apply pulse animation
+    whaleContainer.classList.add('signal-pulse');
+    
+    // Trigger chart pulse
+    pulseChart();
+    
+    output.scrollTop = output.scrollHeight;
+}
+
+// Chart Pulse Effect
+function pulseChart() {
+    const chartContainer = document.getElementById('chartContainer');
+    if (chartContainer) {
+        chartContainer.classList.add('chart-pulse');
+        setTimeout(() => {
+            chartContainer.classList.remove('chart-pulse');
+        }, 1500);
+    }
+}
 
 // Terminal Input Handler
 let isTyping = false;
@@ -275,7 +345,12 @@ document.getElementById('terminalInput').addEventListener('keypress', async func
         } else if (commands[input]) {
             const cmd = commands[input];
             
-            if (typeof cmd === 'function') {
+            // Special signal command
+            if (cmd.special === 'signal') {
+                isTyping = true;
+                await executeSignalCommand(output);
+                isTyping = false;
+            } else if (typeof cmd === 'function') {
                 // Function command (like 67.meme, 67.fortune)
                 const response = cmd();
                 if (typeof response === 'object' && response.typed) {
