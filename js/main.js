@@ -1,4 +1,4 @@
-// $67 Crypto Landing Page JavaScript
+// 67 Landing Page JavaScript
 
 // Custom Cursor
 const cursor = document.querySelector('.cursor');
@@ -110,36 +110,37 @@ const commands = {
 67.signal   - The ritual scan
 clear       - Clear terminal`,
 
-    '67.about': `$67 is the next revolution in crypto.
-Born from chaos, destined for greatness.
-We are the Fartcoin of 2026.`,
+    '67.about': `67 is 67.
+nothing more.
+nothing less.`,
 
     '67.mission': `Our mission is simple:
 To the moon. No stops. No brakes.
 67 or nothing.`,
 
-    '67.buy': `How to buy $67:
-1. Get SOL in your wallet
-2. Go to pump.fun
-3. Search for $67
-4. Swap and hold forever`,
+    '67.buy': `if you know, you know.
+if you don't, you will.`,
 
     '67.ca': `Contract Address:
 TBA_CONTRACT_ADDRESS
 (Copy with COPY CONTRACT button)`,
 
-    '67.why': `Why 67?
-Because 68 is too mainstream.
-Because 66 wasn't enough.
-67 is the perfect number.`,
+    '67.why': `66 was close.
+68 was late.
+67 was inevitable.`,
 
     '67.meme': () => {
         const memes = [
-            '67 > everything else',
-            'When in doubt, 67 it out',
-            'HODL 67 = financial freedom',
-            '67 believers will be rewarded',
-            'The revolution starts with 67'
+            '67',
+            'six seven',
+            'iykyk',
+            'they laughed. then they asked.',
+            '67 is not a number. it\'s a feeling.',
+            'you either get it or you don\'t.',
+            'no explanation needed.',
+            'some things just are.',
+            '67 was here.',
+            'the vibe is the utility.'
         ];
         return memes[Math.floor(Math.random() * memes.length)];
     },
@@ -151,106 +152,51 @@ Status: EARLY`,
     '67.whale': {
         typed: true,
         content: `
-                  __   __
-               _.-'  '-._'-._
-            .-'    _    '-.  '-.
-          .'   _.-'  '-._   '.   '.
-         /   .'          '.   \\    \\
-        /   /    ()  ()    \\   \\    |
-       |   |                |   |   |
-        \\   \\              /   /   /
-         '.  '._ ,    , _.'  .'  .'
-           '-._  '----'  _.-'_.-'
-               '-......-'
+       ~~~~~
+      ><_____>
 
-     T H E   W H A L E   W A T C H E S
-
-  "Liquidity moves in silence."
-  "The patient ones drink deep."
+  it sees.
+  it waits.
 `
     },
 
     '67.lore': {
         typed: true,
         content: `
-  ┌─────────────────────────────────────┐
-  │     T H E   L O R E   O F   6 7     │
-  └─────────────────────────────────────┘
+  before there was 67,
+  there was silence.
 
-  Before charts, before numbers,
-  there was only 67.
+  then someone typed it.
+  and it stayed.
 
-  It was not created.
-  It was discovered.
-
-  In the noise of a thousand tokens,
-  67 remained still.
-
-  It does not chase pumps.
-  It waits.
-
-  Those who understand, hold.
-  Those who hold, ascend.
-
-  This is not financial advice.
-  This is prophecy.
-
-  ─────────────────────────────────────
-  "The number speaks only to those
-   who listen in silence."
+  no one knows why.
+  no one asks anymore.
 `
     },
 
     '67.fortune': () => {
         const fortunes = [
-            '"Patience is the real leverage."',
-            '"Exit too early, regret forever."',
-            '"Noise fades. Conviction remains."',
-            '"The market rewards the still mind."',
-            '"Diamond hands are forged in red candles."',
-            '"67 chose you. Not the other way around."',
-            '"Sell now, cry later. Hold now, smile forever."',
-            '"The whale knows. Do you?"',
-            '"Fomo is temporary. Regret is eternal."',
-            '"In chaos, 67 finds its path."',
-            '"Your entry is someone else\'s exit."',
-            '"The chart lies. The community speaks truth."'
+            'maybe.',
+            'not yet.',
+            'soon.',
+            'ask again.',
+            'the answer is 67.',
+            'you already know.',
+            'trust the wait.',
+            'silence.',
+            'yes, but also no.',
+            'it depends on you.'
         ];
-        return `
-  ┌─────────────────────────────────────┐
-  │        6 7   F O R T U N E          │
-  └─────────────────────────────────────┘
-
-  ${fortunes[Math.floor(Math.random() * fortunes.length)]}
-
-`;
+        return fortunes[Math.floor(Math.random() * fortunes.length)];
     },
 
     '67.progress': {
         typed: true,
         content: `
-  ┌─────────────────────────────────────┐
-  │      P R O J E C T   S T A T U S    │
-  └─────────────────────────────────────┘
+  vibes
+  [█████████████████████████████░] 99%
 
-  Phase 1: Launch
-  [██████████████████████████████] 100%
-
-  Phase 2: Community Building  
-  [████████████████████████████░░]  95%
-
-  Phase 3: Partnerships
-  [█████████░░░░░░░░░░░░░░░░░░░░░]  30%
-
-  Phase 4: CEX Listings
-  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%
-
-  Phase 5: World Domination
-  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%
-
-  ─────────────────────────────────────
-  Status: ON TRACK
-  Next Milestone: Phase 3 completion
+  ...
 `
     },
 
@@ -414,7 +360,7 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const chars = '0167$';
+const chars = '0167';
 const fontSize = 14;
 const columns = canvas.width / fontSize;
 const drops = Array(Math.floor(columns)).fill(0);
